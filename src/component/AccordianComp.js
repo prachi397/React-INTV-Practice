@@ -29,10 +29,14 @@ const accordionData = [
 ];
 
 const AccordianComp = () => {
-  const [activeIdx, setActiveIdx] = useState(false);
+  const [activeIndeces, setActiveIndeces] = useState([]);
 
   function handleToggle(id) {
-    setActiveIdx(activeIdx === id ? null : id);
+    if(activeIndeces.includes(id)){
+        setActiveIndeces(activeIndeces.filter((ele)=>ele !== id));
+    }else{
+        setActiveIndeces([...activeIndeces,id]);
+    }
   }
   return (
     <>
@@ -41,10 +45,10 @@ const AccordianComp = () => {
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <h3>{ele.title}</h3>
             <p onClick={() => handleToggle(ele.id)}>
-              {activeIdx === ele.id ? "-" : "+"}
+              {activeIndeces.includes(ele.id) ? "-" : "+"}
             </p>
           </div>
-          {activeIdx === ele.id && <p>{ele.content}</p>}
+          {activeIndeces.includes(ele.id) && <p>{ele.content}</p>}
         </div>
       ))}
     </>
