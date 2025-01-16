@@ -10,13 +10,15 @@ import List from './component/List';
 import GreetForm from './component/GreetForm';
 import RenderJson from './component/RenderJson';
 import Information from './component/Information';
+import AccordianComp from './component/AccordianComp';
 
 function App() {
   const {theme, toggleTheme} = useContext(ThemeContext);
   return (
     <div>
+      <AccordianComp/>
       {/* <Counter/> */}
-      <Information/>
+      {/* <Information/> */}
       {/* <List/> */}
       {/* <GreetForm/> */}
       {/* <RenderJson/> */}
