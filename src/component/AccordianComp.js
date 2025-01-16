@@ -1,4 +1,8 @@
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { useState } from "react";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import Typography from '@mui/material/Typography';
 
 const accordionData = [
   {
@@ -32,15 +36,15 @@ const AccordianComp = () => {
   const [activeIndeces, setActiveIndeces] = useState([]);
 
   function handleToggle(id) {
-    if(activeIndeces.includes(id)){
-        setActiveIndeces(activeIndeces.filter((ele)=>ele !== id));
-    }else{
-        setActiveIndeces([...activeIndeces,id]);
+    if (activeIndeces.includes(id)) {
+      setActiveIndeces(activeIndeces.filter((ele) => ele !== id));
+    } else {
+      setActiveIndeces([...activeIndeces, id]);
     }
   }
   return (
     <>
-      {accordionData.map((ele) => (
+      {/* {accordionData.map((ele) => (
         <div key={ele.id}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <h3>{ele.title}</h3>
@@ -50,6 +54,21 @@ const AccordianComp = () => {
           </div>
           {activeIndeces.includes(ele.id) && <p>{ele.content}</p>}
         </div>
+      ))} */}
+      {/* accordian using material ui */}
+      {accordionData.map((ele) => (
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ArrowDownwardIcon />}
+            area-controls="panel1-content"
+            id="panel1-header"
+          >
+            <Typography variant="span">{ele.title}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>{ele.content}</Typography>
+          </AccordionDetails>
+        </Accordion>
       ))}
     </>
   );
