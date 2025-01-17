@@ -6,12 +6,14 @@ import Stopwatch from './component/Stopwatch';
 import ToDo from './component/ToDo';
 import { ThemeContext } from './component/ThemeProvider';
 import UnControlledComp from './component/UnControlledComp';
+import List from './component/List';
 
 function App() {
   const {theme, toggleTheme} = useContext(ThemeContext);
   return (
     <div>
       <Counter/>
+      <List/>
        {/* <button onClick={toggleTheme}>{theme === "light"? "dark": "light"}</button> */}
       {/* <ToDo/> */}
       {/* <Stopwatch/> */}

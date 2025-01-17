@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment, loginUser } from "../redux/actionCreator";
+import Button from "../customComp/Button";
 
 const Counter = () =>{
     //step 5: use redux state
@@ -15,10 +16,10 @@ const Counter = () =>{
     return(
         <div>
             <h1>User : {user?.name}</h1>
-            <button onClick={()=>dispatch(loginUser())}>Login</button>
+            <Button title="Login" handleClick={()=>dispatch(loginUser())}/>
             <h1>Count: {count}</h1>
-            <button onClick={()=>dispatch(increment())}>Increment</button>
-            <button onClick={()=>dispatch(decrement())}>Decrement</button>
+            <Button title="Increment" handleClick={()=>dispatch(increment())}/>
+            <Button title="Decrement" handleClick={()=>dispatch(decrement())}/>
         </div>
     )
 }
