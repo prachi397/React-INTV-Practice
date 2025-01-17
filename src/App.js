@@ -7,13 +7,15 @@ import ToDo from './component/ToDo';
 import { ThemeContext } from './component/ThemeProvider';
 import UnControlledComp from './component/UnControlledComp';
 import List from './component/List';
+import GreetForm from './component/GreetForm';
 
 function App() {
   const {theme, toggleTheme} = useContext(ThemeContext);
   return (
     <div>
       <Counter/>
-      <List/>
+      {/* <List/> */}
+      <GreetForm/>
        {/* <button onClick={toggleTheme}>{theme === "light"? "dark": "light"}</button> */}
       {/* <ToDo/> */}
       {/* <Stopwatch/> */}
