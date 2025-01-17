@@ -8,6 +8,7 @@ import { ThemeContext } from './component/ThemeProvider';
 import UnControlledComp from './component/UnControlledComp';
 import List from './component/List';
 import GreetForm from './component/GreetForm';
+import RenderJson from './component/RenderJson';
 
 function App() {
   const {theme, toggleTheme} = useContext(ThemeContext);
@@ -15,7 +16,8 @@ function App() {
     <div>
       <Counter/>
       {/* <List/> */}
-      <GreetForm/>
+      {/* <GreetForm/> */}
+      <RenderJson/>
        {/* <button onClick={toggleTheme}>{theme === "light"? "dark": "light"}</button> */}
       {/* <ToDo/> */}
       {/* <Stopwatch/> */}
