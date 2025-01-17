@@ -1,5 +1,7 @@
 //step2 : create reducers, whihc carries out the particular action and update the state depending on the action.
 
+import { DECREMENT, INCREMENT } from "./actionType";
+
 const initialState = {
   count: 0,
 };
@@ -7,9 +9,9 @@ const initialState = {
 //it takes state and action and return the updated state according to the action
 export const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "INCREMENT":
+    case INCREMENT:
       return { ...state, count: state.count + action.payload };
-    case "DECREMENT":
+    case DECREMENT:
       return { ...state, count: state.count - action.payload };
     default:
       return state;
