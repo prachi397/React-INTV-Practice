@@ -11,12 +11,14 @@ import GreetForm from './component/GreetForm';
 import RenderJson from './component/RenderJson';
 import Information from './component/Information';
 import AccordianComp from './component/AccordianComp';
+import ImageSlider from './component/ImageSlider';
 
 function App() {
   const {theme, toggleTheme} = useContext(ThemeContext);
   return (
     <div>
-      <AccordianComp/>
+      {/* <AccordianComp/> */}
+      <ImageSlider/>
       {/* <Counter/> */}
       {/* <Information/> */}
       {/* <List/> */}
