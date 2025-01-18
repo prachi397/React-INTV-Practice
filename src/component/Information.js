@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { userInformations } from "../services/userInformations";
 import UserDetails from "../customComp/UserDetails";
+import { Box, CircularProgress } from "@mui/material";
 
 const Information = () => {
   const [userDetails, setUserDetails] = useState([]);
@@ -25,13 +26,13 @@ const Information = () => {
   }
   console.log(userDetails);
   return (
-    <div>
+    <Box sx={{textAlign:"center"}}>
       {loading ? (
-        <p>Loading data....</p>
+        <CircularProgress/>
       ) : (
-        <UserDetails userData={userDetails} />
+        <UserDetails userData={userDetails} fetchData={fetchData}/>
       )}
-    </div>
+    </Box>
   );
 };
 export default Information;
