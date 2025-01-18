@@ -16,8 +16,8 @@ function App() {
   return (
     <div>
       {/* <Counter/> */}
-      {/* <Information/> */}
-      <List/>
+      <Information/>
+      {/* <List/> */}
       {/* <GreetForm/> */}
       {/* <RenderJson/> */}
        {/* <button onClick={toggleTheme}>{theme === "light"? "dark": "light"}</button> */}
